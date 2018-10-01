@@ -180,25 +180,26 @@ class SpeedBlock extends Block {
     constructor(x, y) {
         super(x, y);
         this.setImage("block4.png");
+        Block.blocksToDestroy = Block.blocksToDestroy - 1;
     }
     handleCollision() {
-        super.handleCollision();
-        Princess.speedWhenWalking = 500;
+        game.removeSprite(this);
+        ann.speedWhenWalking = 200;
     }
 }
 
 new SpeedBlock(450, 250);
 
-class PartOfWall extends Block {
+class BounceBlock extends Block {
     constructor(x, y) {
         super(x, y);
         this.setImage("block1.png"); 
-        Block.blocksToDestroy = Block.blocksTodestroy - 1;
+        Block.blocksToDestroy = Block.blocksToDestroy - 1;
     }
     handleCollision() {
-        super.handleCollision();
-        ann.LoseALife();
+        this.accelerateOnBounce = false;
     }
 }
 
-new PartOfWall(100, 200);
+new BounceBlock(100, 400);
+new BounceBlock(500, 300);
