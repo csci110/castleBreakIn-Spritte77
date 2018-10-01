@@ -9,3 +9,4 @@ game.preloadImage("wall.png");
 game.preloadImage("ann.png", 48, 48);
 game.preloadImage("ball.png", 48, 48);
 game.preloadImage("block4.png");
+game.preloadImage("berrybush.png", 48, 48);
